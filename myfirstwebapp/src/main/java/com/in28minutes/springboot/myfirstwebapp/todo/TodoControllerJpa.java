@@ -8,15 +8,17 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.util.List;
 
-@Controller
+//@Controller
 @SessionAttributes("name")
-public class TodoController {
+public class TodoControllerJpa {
     @Autowired
     private TodoService todoService;
+    @Autowired
+    private TodoRepository todoRepository;
 
     @GetMapping("list-todos")
     public String listAllTodos(ModelMap modelMap) {
-        List<Todo> todos = todoService.findByUsername("bukky");
+        List<Todo> todos = todoRepository.findByUsername("bukky");
         modelMap.put("todos", todos);
         return "listTodos";
     }
