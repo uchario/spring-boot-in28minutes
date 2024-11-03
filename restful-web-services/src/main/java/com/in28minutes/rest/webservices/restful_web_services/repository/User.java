@@ -1,5 +1,6 @@
 package com.in28minutes.rest.webservices.restful_web_services.repository;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,9 +9,10 @@ import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
-@JsonIgnoreProperties("birthDate")
+//@JsonIgnoreProperties("birthDate")
+@JsonFilter("ucheFilter")
 public class User {
-    @JsonIgnore
+//    @JsonIgnore
     private Integer id;
 
     @Size(min = 2, message = "Name should have atleast 2 characters")
