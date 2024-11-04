@@ -31,7 +31,7 @@ public class User {
     private LocalDate birthDate;
 
     @OneToMany(mappedBy = "user")
-//    @JsonIgnore
+    @JsonIgnore
     private List<Post> posts;
 
     public User() {
@@ -75,5 +75,13 @@ public class User {
                 ", name='" + name + '\'' +
                 ", birthDate=" + birthDate +
                 '}';
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 }
