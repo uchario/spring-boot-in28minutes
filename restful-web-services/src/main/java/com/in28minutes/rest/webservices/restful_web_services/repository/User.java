@@ -31,7 +31,7 @@ public class User {
     private LocalDate birthDate;
 
     @OneToMany(mappedBy = "user")
-    @JsonIgnore
+//    @JsonIgnore
     private List<Post> posts;
 
     public User() {

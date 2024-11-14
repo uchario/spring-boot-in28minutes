@@ -1,5 +1,6 @@
 package com.in28minutes.rest.webservices.restful_web_services.repository;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ public class Post {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private User user;
 
     public Post() {
