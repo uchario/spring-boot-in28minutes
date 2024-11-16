@@ -11,4 +11,9 @@ public class CommonPointCutConfig {
     public void dataPackageConfigUsingBean() {
 
     }
+
+    @Pointcut("@annotation(com.in28minutes.learn_spring_aop.aop.annotations.TrackTime)")
+    public void trackTimeAnnotation() {
+
+    }
 }
