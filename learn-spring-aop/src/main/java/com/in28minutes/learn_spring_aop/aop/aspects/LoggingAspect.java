@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class LoggingAspect {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Before("execution(* com.in28minutes.learn_spring_aop.aop.business.*.*(..))")
+    @Before("com.in28minutes.learn_spring_aop.aop.aspects.CommonPointCutConfig.businessPackageConfig()")
     public void logMethodCallBeforeExec(JoinPoint joinPoint) {
         logger.info("Before Aspect - {} Method is called with args: {}", joinPoint, joinPoint.getArgs());
     }
